@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!--<suite name="TADashBoard Selenide" verbose="1" thread-count="${dataproviderthreadcount}" parallel="classes">-->
+<suite name="TIKI Selenide" verbose="1" thread-count="2" parallel="classes">
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+        <listener class-name="listeners.AnnotationTransformer"/>
+    </listeners>
+
+    <test name="Regression on chrome">
+        <!--        <parameter name="browser" value="${browser}"/>-->
+        <parameter name="browser" value="chrome"/>
+        <parameter name="headless" value="false"/>
+        <classes>
+            <class name="TestCase001"/>
+            <class name="TestCase002"/>
+        </classes>
+    </test>
+</suite>
